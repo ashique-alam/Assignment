@@ -1,0 +1,29 @@
+package com.ashique.annotationset;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+	
+	@Bean
+	public Question getQuestion() {
+		Question question=new Question();
+		question.setQuestion("This is my question ?");
+		question.setQuestionId("101");
+		
+		Set<String> ans=new HashSet<String>();
+		ans.add("This is my first ans");
+		ans.add("This is my second ans");
+		ans.add("This is my first ans");
+		
+		question.setAnswer(ans);
+		
+		return question;
+	}
+}
